@@ -1,7 +1,6 @@
 const firtsName : string = 'Jhon';
 const lastName = 'Galeano';
 
-
 let diceNumber = 5;
 diceNumber = 3;
 
