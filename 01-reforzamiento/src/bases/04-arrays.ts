@@ -1,5 +1,5 @@
 const myArray: number[] = [1, 2, 3, 4, 5];
-// const myArray: (number | string)[] = [1, 2, '3', 4, 5, 'contando numeros'];  **otra manera
+// const myArray: (number | string)[] = [1, 2, '3', 4, 5,'contando numeros'];  **otra manera
 myArray.push(84);
  
  
