@@ -23,8 +23,8 @@ const useState = ( valorInicial:string ) => {
     ] as const;
 };
 
-const [name, setName] = useState('Goku');
-console.log(name);       // Goku
+const [nombre, setName] = useState('Goku');
+console.log(nombre);       // Goku
 setName('Vegeta');       // Imprime "Vegeta"
 
 

@@ -42,7 +42,7 @@ const useContext = ( { key, nombre, apellido, poder, edad } : Hero ) => {
 
 const { edad, keyName, usuario } = useContext(persona);
 
-const { apellido, nombre } = usuario
+const { apellido } = usuario
 console.log(edad, keyName);
-console.log(apellido, nombre, 'hola');
+console.log(apellido, 'hola');
 
