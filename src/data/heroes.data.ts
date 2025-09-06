@@ -34,7 +34,7 @@ export const heroes : Hero [] = [
     },
     {
       id: 5,
-      name: 'Wolverine',
+      name: 'Wolverine el mas',
       owner: Owner.Marvel,
     },
   ];
