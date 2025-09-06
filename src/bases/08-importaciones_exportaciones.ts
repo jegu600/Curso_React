@@ -21,4 +21,4 @@ export const getHeroesByOwner = ( owner:Owner ) => {
     return filterHeroes;
 };
 
-// console.log( getHerobyId(7) );
+console.log( getHerobyId(7) );
