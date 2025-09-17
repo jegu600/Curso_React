@@ -3,6 +3,7 @@ const MiPrimeraApp = () => {
     const Apellido = 'Galeano';
     const juegosFavoritos = ['El Dios de la Guerra', 'Dragon Ball', 'Fifa 2024', 'League of Legend'];
     const isActive = false;
+
     const direccion = {
         mazana: '2',
         casa: '12',
