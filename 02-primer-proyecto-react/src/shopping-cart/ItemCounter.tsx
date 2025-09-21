@@ -58,6 +58,7 @@ export const ItemCounter = ({ nombreProducto, cantidad = 1 }: Props) => {
                 >
                     - 1 +-
                 </button>
+                <p>HLA MUNDO</p>
             </section>
         </>
     );
