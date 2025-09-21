@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-import './ItemCounter.css'
+import './ItemCounterr.css'
 
 interface Props {
     nombreProducto: string,
     cantidad: number | undefined,
 }
 
-export const ItemCounter = ({ nombreProducto, cantidad = 1 }: Props) => {
+export const ItemCounterr = ({ nombreProducto, cantidad = 1 }: Props) => {
 
     const [contador, actulizaContador] = useState(cantidad);
 
@@ -58,7 +58,6 @@ export const ItemCounter = ({ nombreProducto, cantidad = 1 }: Props) => {
                 >
                     - 1 +-
                 </button>
-                <p>HLA MUNDO</p>
             </section>
         </>
     );

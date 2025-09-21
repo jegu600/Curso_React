@@ -1,4 +1,4 @@
-import { ItemCounter } from "./shopping-cart/ItemCounter"
+import { ItemCounterr } from "./shopping-cart/ItemCounterr"
 
 interface InsertarItemCarr {
     id: number,
@@ -24,7 +24,7 @@ export function FirstStepsApp() {
 
             {
                 insertarItemCarr.map(({ id, nombreProducto, cantidad }) => (
-                    <ItemCounter key={id} nombreProducto={nombreProducto} cantidad={cantidad} />
+                    <ItemCounterr key={id} nombreProducto={nombreProducto} cantidad={cantidad} />
                 )
 
                 )
