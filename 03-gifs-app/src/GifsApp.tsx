@@ -1,9 +1,39 @@
+import { useState } from "react";
+
+
 import { PreviousSearches } from "./gifs/components/PreviousSearches";
-import { mockGifs } from "./mock-data/gifs.moke";
 import { CustomHeader } from "./shared/components/CustomHeader";
 import { CustomSearch } from "./shared/components/CustomSearch";
+import { GifList } from "./gifs/components/GifList";
+import { mockGifs } from "./mock-data/gifs.moke";
+
+
 
 export const GifsApp = () => {
+
+    const [previusSearchs, setSearchs] = useState(['goku', 'Lufy']);
+
+    const handleResClick = (res: string) => {
+        return console.log({ res });
+    };
+
+    const handleSearch = (query: string) => {
+
+        query = query.trim().toLowerCase();
+
+        if (query.length === 0) {
+            return console.log('esta vacio');
+        }
+
+        if (previusSearchs.includes(query)) return;
+
+        const currentSearch = previusSearchs.slice(0, 6);
+
+        currentSearch.unshift(query);
+
+        setSearchs(currentSearch);
+    };
+
     return (
         <>
             {/* header */}
@@ -12,31 +42,24 @@ export const GifsApp = () => {
                 descripcion='Esto es para buscar el mejor Git'
             />
 
-
             {/* buscador */}
             <CustomSearch
                 ClassNameProp="search-container"
                 typeProp="text"
                 placeHolderProp="Buscar gifs"
                 nameButtonProp="Buscar"
+                // funciones o eventos
+                onQuery={handleSearch}
             />
 
-
             {/* Busquedas previas */}
-            <PreviousSearches />
+            <PreviousSearches
+                searchs={previusSearchs}
+                onLabelClick={handleResClick}
+            />
 
             {/* Gits */}
-            <div className="gifs-container" >
-                {
-                    mockGifs.map((git) => (
-                        <div key={git.id} className="gif-card">
-                            <img src={git.url} alt={git.title} />
-                            <h3>{git.title}</h3>
-                            <p>{git.width}x{git.height}</p>
-                        </div>
-                    ))
-                }
-            </div >
+            < GifList gifs={mockGifs} />
 
         </>
     )
