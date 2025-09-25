@@ -6,6 +6,9 @@ import { CustomHeader } from "./shared/components/CustomHeader";
 import { CustomSearch } from "./shared/components/CustomSearch";
 import { GifList } from "./gifs/components/GifList";
 import { mockGifs } from "./mock-data/gifs.moke";
+import { getGifsByQuery } from "./gifs/actions/gif-gifs-gy-query.action";
+
+
 
 
 
@@ -17,7 +20,7 @@ export const GifsApp = () => {
         return console.log({ res });
     };
 
-    const handleSearch = (query: string) => {
+    const handleSearch = async (query: string) => {
 
         query = query.trim().toLowerCase();
 
@@ -32,6 +35,10 @@ export const GifsApp = () => {
         currentSearch.unshift(query);
 
         setSearchs(currentSearch);
+
+        const gif = await getGifsByQuery(query);
+
+        console.log({ gif })
     };
 
     return (
