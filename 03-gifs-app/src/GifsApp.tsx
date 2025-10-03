@@ -1,45 +1,13 @@
-import { useState } from "react";
 
-
-import { PreviousSearches } from "./gifs/components/PreviousSearches";
-import { CustomHeader } from "./shared/components/CustomHeader";
-import { CustomSearch } from "./shared/components/CustomSearch";
-import { GifList } from "./gifs/components/GifList";
-import { mockGifs } from "./mock-data/gifs.moke";
-import { getGifsByQuery } from "./gifs/actions/gif-gifs-gy-query.action";
-
-
-
-
+import { PreviousSearches } from './gifs/components/PreviousSearches';
+import { CustomHeader } from './shared/components/CustomHeader';
+import { CustomSearch } from './shared/components/CustomSearch';
+import { GifList } from './gifs/components/GifList';
+import { useGifs } from './gifs/hooks/useGifs';
 
 export const GifsApp = () => {
 
-    const [previusSearchs, setSearchs] = useState(['goku', 'Lufy']);
-
-    const handleResClick = (res: string) => {
-        return console.log({ res });
-    };
-
-    const handleSearch = async (query: string) => {
-
-        query = query.trim().toLowerCase();
-
-        if (query.length === 0) {
-            return console.log('esta vacio');
-        }
-
-        if (previusSearchs.includes(query)) return;
-
-        const currentSearch = previusSearchs.slice(0, 6);
-
-        currentSearch.unshift(query);
-
-        setSearchs(currentSearch);
-
-        const gif = await getGifsByQuery(query);
-
-        console.log({ gif })
-    };
+    const { previusSearchs, gifs, handleSearch, handleResClick } = useGifs();
 
     return (
         <>
@@ -55,6 +23,7 @@ export const GifsApp = () => {
                 typeProp="text"
                 placeHolderProp="Buscar gifs"
                 nameButtonProp="Buscar"
+
                 // funciones o eventos
                 onQuery={handleSearch}
             />
@@ -66,7 +35,7 @@ export const GifsApp = () => {
             />
 
             {/* Gits */}
-            < GifList gifs={mockGifs} />
+            < GifList gifs={gifs} />
 
         </>
     )

@@ -48,7 +48,6 @@ export const CustomSearch = ({ ClassNameProp, typeProp, placeHolderProp = 'busca
             <button
                 onClick={handleSearch}
             >
-
                 {nameButtonProp}
             </button>
         </div>
